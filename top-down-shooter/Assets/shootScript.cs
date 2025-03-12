@@ -14,7 +14,7 @@ public class shootScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             var tempbullet = Instantiate(Bullet, transform.position, Quaternion.identity);
             tempbullet.GetComponent<Rigidbody2D>().AddForce(transform.up * 600f);
