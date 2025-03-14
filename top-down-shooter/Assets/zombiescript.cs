@@ -12,6 +12,7 @@ public class zombiescript : MonoBehaviour
     public Transform plTransform;
 
     private int pointsIndex = 0;
+    public int startpoint;
 
     // Start is called before the first frame update
     void Start()
