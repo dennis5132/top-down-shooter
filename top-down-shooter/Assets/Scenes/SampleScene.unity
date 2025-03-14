@@ -1564,6 +1564,8 @@ MonoBehaviour:
   - {fileID: 563904321}
   - {fileID: 2061095456}
   moveSpeed: 3
+  sight: 3
+  plTransform: {fileID: 1416113380}
 --- !u!212 &1884254836
 SpriteRenderer:
   m_ObjectHideFlags: 0
