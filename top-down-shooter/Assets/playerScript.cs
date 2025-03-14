@@ -29,9 +29,9 @@ public class playerScript : MonoBehaviour
         plRigidBody.AddForce(movement * 100f);
 
         //beperken van de snelheid
-        if (plRigidBody.velocity.magnitude > plMaxSpeed)
+        if (plRigidBody.velocity.magnitude > plMaxSpeed * Time.deltaTime)
         {
-            plRigidBody.velocity = plRigidBody.velocity.normalized * plMaxSpeed;
+            plRigidBody.velocity = plRigidBody.velocity.normalized * plMaxSpeed * Time.deltaTime;
         }
         //speler laten stoppen
         if (plRigidBody.velocity.magnitude > 0)
