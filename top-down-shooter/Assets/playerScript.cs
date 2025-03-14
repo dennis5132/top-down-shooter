@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 using static UnityEngine.GraphicsBuffer;
 
@@ -9,6 +10,7 @@ public class playerScript : MonoBehaviour
     public float plMaxSpeed = 5f; // maximale snelheid van de player
     private Rigidbody2D plRigidBody;
     public Transform target;
+    public int Health;
     
 
     // Start is called before the first frame update
@@ -42,5 +44,18 @@ public class playerScript : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Health -= 1;
+            Debug.Log(Health);
+            if (Health <= 0)
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
     }
 }

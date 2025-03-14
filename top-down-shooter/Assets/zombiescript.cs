@@ -32,7 +32,6 @@ public class zombiescript : MonoBehaviour
             if (Vector2.Distance(this.transform.position, Points[pointsIndex].position) < 0.1)
             {
                 pointsIndex++;
-                Debug.Log(pointsIndex);
             }
             
             if (pointsIndex == Points.Length) 
