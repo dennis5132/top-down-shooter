@@ -5,6 +5,7 @@ using UnityEngine;
 public class shootScript : MonoBehaviour
 {
     public GameObject Bullet;
+    public float bulletSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class shootScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             var tempbullet = Instantiate(Bullet, transform.position, Quaternion.identity);
-            tempbullet.GetComponent<Rigidbody2D>().AddForce(transform.up * 600f);
+            tempbullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletSpeed);
         }
     }
 }
