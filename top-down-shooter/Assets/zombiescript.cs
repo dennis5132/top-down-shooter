@@ -16,6 +16,7 @@ public class zombiescript : MonoBehaviour
 
     private int pointsIndex = 0;
     public int startpoint;
+    public LayerMask layerCast;
 
     // Start is called before the first frame update
     void Start()
@@ -60,13 +61,13 @@ public class zombiescript : MonoBehaviour
     {
         
         Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, target.position - transform.position);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, target.position - transform.position, 5, layerCast);
         //Debug.Log(hit);
-        if (hit.collider.CompareTag("Level"))
+        if (hit)
         {
-            Debug.Log("hit");
-            transform.rotation = Quaternion.LookRotation(Vector3.right, target.position - transform.position);
-            transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
+            Debug.Log(hit.collider);
+            transform.rotation = Quaternion.LookRotation(Vector2.right, target.position - transform.position);
+            transform.position += Vector3.up * moveSpeed * Time.deltaTime;
         }
         else
         {
