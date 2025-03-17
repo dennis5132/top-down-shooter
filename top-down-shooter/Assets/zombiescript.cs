@@ -60,9 +60,9 @@ public class zombiescript : MonoBehaviour
     {
         
         Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
-        RaycastHit2D hit = Physics2D.Linecast(transform.position, target.position - transform.position, 10);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, target.position - transform.position);
         //Debug.Log(hit);
-        if (hit.collider)
+        if (hit.collider.CompareTag("Level"))
         {
             Debug.Log("hit");
             transform.rotation = Quaternion.LookRotation(Vector3.right, target.position - transform.position);
