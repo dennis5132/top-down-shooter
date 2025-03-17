@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 80749363}
   - component: {fileID: 80749362}
   - component: {fileID: 80749361}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle (4)
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -253,6 +253,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 517624930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 116.409}
+--- !u!1 &261539846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 261539848}
+  - component: {fileID: 261539849}
+  m_Layer: 0
+  m_Name: zombieManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &261539848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261539846}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.5492005, y: 3.574251, z: 0.24030931}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261539849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261539846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85c9d808382903419b9822d22802c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Points:
+  - {fileID: 1796235235}
+  - {fileID: 1400731554}
+  - {fileID: 871809999}
+  - {fileID: 1909638348}
+  - {fileID: 1160752988}
+  - {fileID: 1210386905}
+  - {fileID: 563904321}
+  - {fileID: 2061095456}
+  moveSpeed: 3
+  sight: 3
+  plTransform: {fileID: 1416113380}
+  layerCast:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &376505648
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &376505649
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -357,19 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0223234f657704db1baec69c071b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points:
-  - {fileID: 1796235235}
-  - {fileID: 1400731554}
-  - {fileID: 871809999}
-  - {fileID: 1909638348}
-  - {fileID: 1160752988}
-  - {fileID: 1210386905}
-  - {fileID: 563904321}
-  - {fileID: 2061095456}
-  moveSpeed: 3
-  sight: 3
-  plTransform: {fileID: 1416113380}
-  anglerot: 0
+  manager: {fileID: 261539849}
   startpoint: 0
 --- !u!212 &376505652
 SpriteRenderer:
@@ -594,7 +641,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.79, y: 2.48, z: -0.19667904}
-  m_LocalScale: {x: 3.4429688, y: 2.3809042, z: 1}
+  m_LocalScale: {x: 12.450942, y: 4.3451505, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1796235235}
@@ -780,7 +827,7 @@ Transform:
   m_GameObject: {fileID: 563904320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.53, y: -1.82, z: 0}
+  m_LocalPosition: {x: 0.516, y: 3.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -797,7 +844,7 @@ GameObject:
   - component: {fileID: 590005018}
   - component: {fileID: 590005020}
   - component: {fileID: 590005019}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -813,7 +860,7 @@ Transform:
   m_GameObject: {fileID: 590005017}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.4700923, w: 0.8826173}
-  m_LocalPosition: {x: -0.92, y: 3.1, z: 0.13048276}
+  m_LocalPosition: {x: -4.32, y: 6.38, z: 0.13048276}
   m_LocalScale: {x: 1.4744, y: 0.9473, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -941,7 +988,7 @@ Transform:
   m_GameObject: {fileID: 871809998}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.22, y: -0.1, z: 0}
+  m_LocalPosition: {x: -0.698, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1257,7 +1304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1176432087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1342,19 +1389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0223234f657704db1baec69c071b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points:
-  - {fileID: 1796235235}
-  - {fileID: 1400731554}
-  - {fileID: 871809999}
-  - {fileID: 1909638348}
-  - {fileID: 1160752988}
-  - {fileID: 1210386905}
-  - {fileID: 563904321}
-  - {fileID: 2061095456}
-  moveSpeed: 3
-  sight: 3
-  plTransform: {fileID: 1416113380}
-  anglerot: 0
+  manager: {fileID: 261539849}
   startpoint: 0
 --- !u!212 &1176432090
 SpriteRenderer:
@@ -1434,7 +1469,7 @@ GameObject:
   - component: {fileID: 1182504585}
   - component: {fileID: 1182504587}
   - component: {fileID: 1182504586}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (5)
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -1823,7 +1858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ab09761df576c4a8aa820957f4dd30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plMaxSpeed: 20
+  plMaxSpeed: 100
   target: {fileID: 0}
   Health: 5
 --- !u!212 &1416113379
@@ -1985,7 +2020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1677939309
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2070,19 +2105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0223234f657704db1baec69c071b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points:
-  - {fileID: 1796235235}
-  - {fileID: 1400731554}
-  - {fileID: 871809999}
-  - {fileID: 1909638348}
-  - {fileID: 1160752988}
-  - {fileID: 1210386905}
-  - {fileID: 563904321}
-  - {fileID: 2061095456}
-  moveSpeed: 3
-  sight: 3
-  plTransform: {fileID: 1416113380}
-  anglerot: 0
+  manager: {fileID: 261539849}
   startpoint: 0
 --- !u!212 &1677939312
 SpriteRenderer:
@@ -2170,7 +2193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1787918726
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2255,19 +2278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0223234f657704db1baec69c071b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points:
-  - {fileID: 1796235235}
-  - {fileID: 1400731554}
-  - {fileID: 871809999}
-  - {fileID: 1909638348}
-  - {fileID: 1160752988}
-  - {fileID: 1210386905}
-  - {fileID: 563904321}
-  - {fileID: 2061095456}
-  moveSpeed: 3
-  sight: 3
-  plTransform: {fileID: 1416113380}
-  anglerot: 0
+  manager: {fileID: 261539849}
   startpoint: 0
 --- !u!212 &1787918729
 SpriteRenderer:
@@ -2361,7 +2372,7 @@ Transform:
   m_GameObject: {fileID: 1796235234}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.13, y: 2.17, z: 0}
+  m_LocalPosition: {x: -1.96, y: 3.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2378,7 +2389,7 @@ GameObject:
   - component: {fileID: 1842724198}
   - component: {fileID: 1842724197}
   - component: {fileID: 1842724196}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle (3)
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -2516,7 +2527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1883512683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2601,19 +2612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0223234f657704db1baec69c071b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points:
-  - {fileID: 1796235235}
-  - {fileID: 1400731554}
-  - {fileID: 871809999}
-  - {fileID: 1909638348}
-  - {fileID: 1160752988}
-  - {fileID: 1210386905}
-  - {fileID: 563904321}
-  - {fileID: 2061095456}
-  moveSpeed: 3
-  sight: 3
-  plTransform: {fileID: 1416113380}
-  anglerot: 0
+  manager: {fileID: 261539849}
   startpoint: 0
 --- !u!212 &1883512686
 SpriteRenderer:
@@ -2714,19 +2713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0223234f657704db1baec69c071b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points:
-  - {fileID: 1796235235}
-  - {fileID: 1400731554}
-  - {fileID: 871809999}
-  - {fileID: 1909638348}
-  - {fileID: 1160752988}
-  - {fileID: 1210386905}
-  - {fileID: 563904321}
-  - {fileID: 2061095456}
-  moveSpeed: 3
-  sight: 3
-  plTransform: {fileID: 1416113380}
-  anglerot: 0
+  manager: {fileID: 261539849}
   startpoint: 0
 --- !u!212 &1884254836
 SpriteRenderer:
@@ -2892,7 +2879,7 @@ Transform:
   m_GameObject: {fileID: 1909638347}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.12, y: -2.56, z: 0}
+  m_LocalPosition: {x: 1.199, y: -1.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2909,7 +2896,7 @@ GameObject:
   - component: {fileID: 1945204464}
   - component: {fileID: 1945204463}
   - component: {fileID: 1945204462}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle (2)
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -3039,7 +3026,7 @@ GameObject:
   - component: {fileID: 1965486462}
   - component: {fileID: 1965486464}
   - component: {fileID: 1965486463}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -3177,7 +3164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &2001537835
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3262,19 +3249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0223234f657704db1baec69c071b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points:
-  - {fileID: 1796235235}
-  - {fileID: 1400731554}
-  - {fileID: 871809999}
-  - {fileID: 1909638348}
-  - {fileID: 1160752988}
-  - {fileID: 1210386905}
-  - {fileID: 563904321}
-  - {fileID: 2061095456}
-  moveSpeed: 3
-  sight: 3
-  plTransform: {fileID: 1416113380}
-  anglerot: 0
+  manager: {fileID: 261539849}
   startpoint: 0
 --- !u!212 &2001537838
 SpriteRenderer:
@@ -3498,7 +3473,7 @@ Transform:
   m_GameObject: {fileID: 2061095455}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.94, y: 0.1, z: 0}
+  m_LocalPosition: {x: -1.946, y: -0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3515,7 +3490,7 @@ GameObject:
   - component: {fileID: 2113337829}
   - component: {fileID: 2113337828}
   - component: {fileID: 2113337827}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle (1)
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -3641,6 +3616,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1416113380}
   - {fileID: 517624930}
+  - {fileID: 261539848}
   - {fileID: 1884254837}
   - {fileID: 2001537839}
   - {fileID: 376505653}

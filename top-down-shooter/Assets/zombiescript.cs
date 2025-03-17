@@ -7,41 +7,43 @@ using static UnityEngine.GraphicsBuffer;
 
 public class zombiescript : MonoBehaviour
 {
-    [SerializeField] Transform[] Points;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float sight;
-    public Transform plTransform;
+    
     private Transform m_transform;
-    [SerializeField] private int anglerot;
-
+    public zombieManager manager;
     private int pointsIndex = 0;
     public int startpoint;
-    public LayerMask layerCast;
+    
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = Points[pointsIndex].transform.position;
+        startpoint = Random.Range(0, manager.Points.Length);
+        transform.position = manager.Points[pointsIndex].transform.position;
         m_transform = this.transform;
+        //manager.layerCast = "Level";
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(this.transform.position, plTransform.position) < sight)
+        if (Vector2.Distance(this.transform.position, manager.plTransform.position) < manager.sight)
         {
-            moveTo(plTransform);
+            moveTo(manager.plTransform);
             
         }
-        else if (pointsIndex <= Points.Length -1) 
+        else if (pointsIndex <= manager.Points.Length -1) 
         {
-            moveTo(Points[pointsIndex].transform);
-            if (Vector2.Distance(this.transform.position, Points[pointsIndex].position) < 0.1)
+            moveTo(manager.Points[pointsIndex].transform);
+            if (Vector2.Distance(this.transform.position, manager.Points[pointsIndex].position) < 0.1)
             {
-                pointsIndex++;
+                //pointsIndex++;
+                pointsIndex = Random.Range(0, manager.Points.Length);
             }
             
-            if (pointsIndex == Points.Length) 
+            if (pointsIndex == manager.Points.Length) 
             {
                 pointsIndex = 0;
             }
@@ -61,17 +63,19 @@ public class zombiescript : MonoBehaviour
     {
         
         Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, target.position - transform.position, 5, layerCast);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, target.position - transform.position, 5, manager.layerCast);
         //Debug.Log(hit);
         if (hit)
         {
+            
+
             Debug.Log(hit.collider);
-            transform.rotation = Quaternion.LookRotation(Vector2.right, target.position - transform.position);
-            transform.position += Vector3.up * moveSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.LookRotation(Vector2.up, target.position - transform.position);
+            transform.position += manager.moveSpeed * Time.deltaTime * Vector3.right; //fix later
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, manager.moveSpeed * Time.deltaTime);
             transform.rotation = Quaternion.LookRotation(Vector3.forward, target.position - transform.position);
             Debug.Log("no hit");
         }
