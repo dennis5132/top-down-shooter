@@ -28,7 +28,7 @@ public class playerScript : MonoBehaviour
 
         //bewegen van het object
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        plRigidBody.AddForce(movement * 100f);
+        plRigidBody.AddForce(movement * plMaxSpeed);
 
         //beperken van de snelheid
         if (plRigidBody.velocity.magnitude > plMaxSpeed * Time.deltaTime)
