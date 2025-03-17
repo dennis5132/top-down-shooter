@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
@@ -10,6 +11,8 @@ public class zombiescript : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float sight;
     public Transform plTransform;
+    private Transform m_transform;
+    [SerializeField] private int anglerot;
 
     private int pointsIndex = 0;
     public int startpoint;
@@ -18,6 +21,7 @@ public class zombiescript : MonoBehaviour
     void Start()
     {
         transform.position = Points[pointsIndex].transform.position;
+        m_transform = this.transform;
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class zombiescript : MonoBehaviour
         if (Vector2.Distance(this.transform.position, plTransform.position) < sight)
         {
             moveTo(plTransform);
+            
         }
         else if (pointsIndex <= Points.Length -1) 
         {
@@ -53,6 +58,22 @@ public class zombiescript : MonoBehaviour
 
     private void moveTo(Transform target)
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-    }
+        
+        Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, target.position - transform.position, 10);
+        //Debug.Log(hit);
+        if (hit.collider)
+        {
+            Debug.Log("hit");
+            transform.rotation = Quaternion.LookRotation(Vector3.right, target.position - transform.position);
+            transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
+        }
+        else
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, target.position - transform.position);
+            Debug.Log("no hit");
+        }
+
+}
 }
