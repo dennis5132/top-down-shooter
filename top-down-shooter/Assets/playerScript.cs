@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 using static UnityEngine.GraphicsBuffer;
+using TMPro; // Import TextMeshPro namespace
 
 public class playerScript : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class playerScript : MonoBehaviour
     private Rigidbody2D plRigidBody;
     public Transform target;
     public int Health;
-    
+
+    // Add a reference to the TextMeshProUGUI component
+    public TextMeshProUGUI healthText;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +47,11 @@ public class playerScript : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
 
+        // Update the health text every frame
+        if (healthText != null)
+        {
+            healthText.text = "Health: " + Health.ToString(); // Update the health display
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -54,7 +62,7 @@ public class playerScript : MonoBehaviour
             Debug.Log(Health);
             if (Health <= 0)
             {
-                SceneManager.LoadScene("startMenu");
+                SceneManager.LoadScene("slainMenu");
             }
         }
     }
