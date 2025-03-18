@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/startMenu.unity
     guid: c26cb50fe4757a24d8425ef852de564d
+  - enabled: 1
+    path: Assets/Scenes/slainMenu.unity
+    guid: fa9390363061c1a408f8115c52a8ec44
   m_configObjects: {}

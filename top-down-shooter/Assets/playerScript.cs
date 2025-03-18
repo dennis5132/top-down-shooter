@@ -54,7 +54,7 @@ public class playerScript : MonoBehaviour
             Debug.Log(Health);
             if (Health <= 0)
             {
-                SceneManager.LoadScene("startMenu");
+                SceneManager.LoadScene("slainMenu");
             }
         }
     }

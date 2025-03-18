@@ -291,7 +291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2465, y: 159.41}
+  m_AnchoredPosition: {x: 10, y: 159.42}
   m_SizeDelta: {x: 405.933, y: 182.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504510925
@@ -315,7 +315,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Controls: \nGo forward by pressing W\nGo backward by pressing S\nGo to
-    the left by pressing A\nGo to the right by pressing D"
+    the left by pressing A\nGo to the right by pressing D\nShoot with Left Click"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -533,7 +533,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0014763, y: 0}
+  m_AnchoredPosition: {x: 5.7535, y: -62}
   m_SizeDelta: {x: 397.44, y: 135.9925}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1122571348
@@ -667,7 +667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000042915, y: 44}
+  m_AnchoredPosition: {x: 0.0014691, y: 44.005}
   m_SizeDelta: {x: 397.437, y: 413.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1164326997
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -965,7 +965,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.42352945, g: 0.050980397, b: 0.050980397, a: 0}
+  m_BackGroundColor: {r: 0.3882353, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
