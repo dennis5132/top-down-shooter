@@ -9,10 +9,11 @@ public class zombiescript : MonoBehaviour
 {
     
     private Transform m_transform;
+    public GameObject zmanager;
     public zombieManager manager;
-    private int pointsIndex = 0;
+    public int pointsIndex = 0;
     public int startpoint;
-    private int currentHealth;
+    public int currentHealth;
     
 
     
@@ -20,13 +21,15 @@ public class zombiescript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        zmanager = GameObject.FindWithTag("GameController"); 
+        manager = GetComponent<zombieManager>();
         startpoint = Random.Range(0, 5);
         transform.position = manager.Points[startpoint].transform.position;
         m_transform = this.transform;
-        //manager.layerCast = "Level";
         currentHealth = manager.baseHealth;
+        
 
-
+        //manager.layerCast = "Level";
     }
 
     // Update is called once per frame
