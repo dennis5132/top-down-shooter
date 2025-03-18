@@ -12,6 +12,7 @@ public class zombiescript : MonoBehaviour
     public zombieManager manager;
     private int pointsIndex = 0;
     public int startpoint;
+    private int currentHealth;
     
 
     
@@ -23,7 +24,9 @@ public class zombiescript : MonoBehaviour
         transform.position = manager.Points[pointsIndex].transform.position;
         m_transform = this.transform;
         //manager.layerCast = "Level";
-        
+        currentHealth = manager.baseHealth;
+
+
     }
 
     // Update is called once per frame
@@ -55,7 +58,12 @@ public class zombiescript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Destroy(this.gameObject);
+            currentHealth -= 1;
+            if (currentHealth < 1)
+            {
+                Destroy(this.gameObject);
+            }
+            
         }
     }
 

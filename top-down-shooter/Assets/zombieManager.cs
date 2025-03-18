@@ -9,6 +9,7 @@ public class zombieManager : MonoBehaviour
     [SerializeField] public float sight;
     public Transform plTransform;
     public LayerMask layerCast;
+    public int baseHealth;
     // Start is called before the first frame update
     void Start()
     {

@@ -307,11 +307,12 @@ MonoBehaviour:
   - {fileID: 563904321}
   - {fileID: 2061095456}
   moveSpeed: 3
-  sight: 3
+  sight: 8
   plTransform: {fileID: 1416113380}
   layerCast:
     serializedVersion: 2
     m_Bits: 8
+  baseHealth: 3
 --- !u!1 &376505648
 GameObject:
   m_ObjectHideFlags: 0
