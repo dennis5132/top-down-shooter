@@ -300,12 +300,12 @@ MonoBehaviour:
   Points:
   - {fileID: 1796235235}
   - {fileID: 1400731554}
-  - {fileID: 871809999}
-  - {fileID: 1909638348}
   - {fileID: 1160752988}
   - {fileID: 1210386905}
   - {fileID: 563904321}
   - {fileID: 2061095456}
+  - {fileID: 871809999}
+  - {fileID: 1909638348}
   moveSpeed: 3
   sight: 8
   plTransform: {fileID: 1416113380}

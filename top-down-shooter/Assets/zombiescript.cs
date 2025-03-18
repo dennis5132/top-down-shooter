@@ -20,8 +20,8 @@ public class zombiescript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startpoint = Random.Range(0, manager.Points.Length);
-        transform.position = manager.Points[pointsIndex].transform.position;
+        startpoint = Random.Range(0, 5);
+        transform.position = manager.Points[startpoint].transform.position;
         m_transform = this.transform;
         //manager.layerCast = "Level";
         currentHealth = manager.baseHealth;
