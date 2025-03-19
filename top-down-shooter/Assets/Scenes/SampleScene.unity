@@ -313,8 +313,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   baseHealth: 3
-  zombieCount: 7
+  zombieCount: 20
   Zombie: {fileID: 3051574206834689111, guid: 14e005dc93a5de248bb334491befea24, type: 3}
+  BaseStuckTime: 2
 --- !u!1 &380329211
 GameObject:
   m_ObjectHideFlags: 0
