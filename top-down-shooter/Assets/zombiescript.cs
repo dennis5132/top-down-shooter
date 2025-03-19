@@ -9,7 +9,7 @@ public class zombiescript : MonoBehaviour
 {
     
     private Transform m_transform;
-    public GameObject zmanager;
+    //public GameObject zmanager;
     public zombieManager manager;
     public int pointsIndex = 0;
     public int startpoint;
@@ -21,13 +21,12 @@ public class zombiescript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        zmanager = GameObject.FindWithTag("GameController"); 
-        manager = GetComponent<zombieManager>();
+        manager = FindObjectOfType<zombieManager>();
         startpoint = Random.Range(0, 5);
         transform.position = manager.Points[startpoint].transform.position;
         m_transform = this.transform;
         currentHealth = manager.baseHealth;
-        
+        pointsIndex = Random.Range(0, manager.Points.Length);
 
         //manager.layerCast = "Level";
     }
@@ -74,22 +73,20 @@ public class zombiescript : MonoBehaviour
     {
         
         Debug.DrawRay(transform.position, target.position - transform.position, Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, target.position - transform.position, 5, manager.layerCast);
-        //Debug.Log(hit);
-        if (hit)
-        {
-            
-
-            Debug.Log(hit.collider);
-            transform.rotation = Quaternion.LookRotation(Vector2.up, target.position - transform.position);
-            transform.position += manager.moveSpeed * Time.deltaTime * Vector3.right; //fix later
-        }
-        else
-        {
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, target.position - transform.position, 5, manager.layerCast);
+        ////Debug.Log(hit);
+        //if (hit)
+        //{
+        //    Debug.Log(hit.collider);
+        //    transform.rotation = Quaternion.LookRotation(Vector2.up, target.position - transform.position);
+        //    transform.position += manager.moveSpeed * Time.deltaTime * Vector3.right; //fix later
+        //}
+        //else
+        //{
             transform.position = Vector2.MoveTowards(transform.position, target.position, manager.moveSpeed * Time.deltaTime);
             transform.rotation = Quaternion.LookRotation(Vector3.forward, target.position - transform.position);
-            Debug.Log("no hit");
-        }
+            //Debug.Log("no hit");
+        //}
 
 }
 }
