@@ -13,6 +13,7 @@ public class zombieManager : MonoBehaviour
     public int zombieCount;
     private int spawned;
     public GameObject Zombie;
+    public int BaseStuckTime;
     //public zombiescript zom;
     // Start is called before the first frame update
     void Start()
