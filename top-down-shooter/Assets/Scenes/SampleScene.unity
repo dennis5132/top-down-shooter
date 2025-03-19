@@ -279,7 +279,7 @@ Transform:
   m_GameObject: {fileID: 261539846}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5492005, y: 3.574251, z: 0.24030931}
+  m_LocalPosition: {x: 0.2, y: 0.6, z: 0.24030931}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,6 +314,7 @@ MonoBehaviour:
     m_Bits: 8
   baseHealth: 3
   zombieCount: 20
+  Remaining: 0
   Zombie: {fileID: 3051574206834689111, guid: 14e005dc93a5de248bb334491befea24, type: 3}
   BaseStuckTime: 2
 --- !u!1 &380329211
