@@ -66,6 +66,7 @@ public class zombiescript : MonoBehaviour
             currentHealth -= 1;
             if (currentHealth < 1)
             {
+                manager.defeated();
                 Destroy(this.gameObject);
             }
             
