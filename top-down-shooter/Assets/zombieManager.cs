@@ -11,6 +11,7 @@ public class zombieManager : MonoBehaviour
     public LayerMask layerCast;
     public int baseHealth;
     public int zombieCount;
+    public int Remaining;
     private int spawned;
     public GameObject Zombie;
     public int BaseStuckTime;
@@ -18,7 +19,7 @@ public class zombieManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Remaining = zombieCount;
         while (spawned < zombieCount) 
         { 
             spawned++;
@@ -34,5 +35,10 @@ public class zombieManager : MonoBehaviour
     void Update()
     {
         
+    }
+    public void defeated()
+    {
+        Remaining--;
+        Debug.Log("zombie killed");
     }
 }
