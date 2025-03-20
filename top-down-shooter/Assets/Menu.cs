@@ -22,4 +22,12 @@ public class menu : MonoBehaviour
     {
         SceneManager.LoadScene("startMenu");
     }
+    public void winmenu()
+    {
+        SceneManager.LoadScene("winMenu");
+    }
+    public void credits()
+    {
+        SceneManager.LoadScene("credits");
+    }
 }
