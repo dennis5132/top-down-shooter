@@ -46,7 +46,7 @@ public class zombieManager : MonoBehaviour
     {
         Remaining--;
         Debug.Log("zombie killed");
-        sight = 100 / Mathf.Pow(Remaining, 0.843f);
+        sight = (Basesight * 12.5f) / Mathf.Pow(Remaining, 0.843f);
         Debug.Log(sight);
     }
 }
