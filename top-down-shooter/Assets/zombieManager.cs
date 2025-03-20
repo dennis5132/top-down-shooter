@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class zombieManager : MonoBehaviour
 {
-    [SerializeField] public Transform[] Points;
-    [SerializeField] public float moveSpeed;
-    [SerializeField] public float sight;
+    public Transform[] Points;
+    public float moveSpeed;
+    public float sight;
+    public float Basesight = 8;
     public Transform plTransform;
     public LayerMask layerCast;
     public int baseHealth;
@@ -19,6 +20,8 @@ public class zombieManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //float v;
+        
         Remaining = zombieCount;
         while (spawned < zombieCount) 
         { 
@@ -30,7 +33,10 @@ public class zombieManager : MonoBehaviour
             //zom.currentHealth = baseHealth;
         }
     }
-
+    //public float currentSight(float v)
+    //{
+    //    return 
+    //}
     // Update is called once per frame
     void Update()
     {
@@ -40,5 +46,7 @@ public class zombieManager : MonoBehaviour
     {
         Remaining--;
         Debug.Log("zombie killed");
+        sight = 100 / Mathf.Pow(Remaining, 0.843f);
+        Debug.Log(sight);
     }
 }
