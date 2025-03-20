@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.TextCore.Text;
-using static UnityEngine.GraphicsBuffer;
 using TMPro; // Import TextMeshPro namespace
 
 public class playerScript : MonoBehaviour
@@ -31,7 +29,7 @@ public class playerScript : MonoBehaviour
 
         //bewegen van het object
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        plRigidBody.AddForce(movement * plMaxSpeed);
+        plRigidBody.AddForce(movement * plMaxSpeed * Time.deltaTime);
 
         //beperken van de snelheid
         if (plRigidBody.velocity.magnitude > plMaxSpeed * Time.deltaTime)

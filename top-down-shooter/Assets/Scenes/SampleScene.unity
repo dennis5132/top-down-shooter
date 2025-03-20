@@ -2701,7 +2701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ab09761df576c4a8aa820957f4dd30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plMaxSpeed: 100
+  plMaxSpeed: 5000
   target: {fileID: 0}
   Health: 5
   healthText: {fileID: 1428639306}

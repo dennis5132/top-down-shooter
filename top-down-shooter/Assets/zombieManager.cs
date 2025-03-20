@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class zombieManager : MonoBehaviour
 {
@@ -45,8 +46,10 @@ public class zombieManager : MonoBehaviour
     public void defeated()
     {
         Remaining--;
-        Debug.Log("zombie killed");
         sight = (Basesight * 12.5f) / Mathf.Pow(Remaining, 0.843f);
-        Debug.Log(sight);
+        if (Remaining == 0)
+        {
+            SceneManager.LoadScene("winMenu");
+        }
     }
 }
