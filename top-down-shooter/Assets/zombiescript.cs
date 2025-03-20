@@ -9,13 +9,14 @@ public class zombiescript : MonoBehaviour
 {
     
     private Transform m_transform;
-    //public GameObject zmanager;
     public zombieManager manager;
     public int pointsIndex = 0;
     public int startpoint;
     public int currentHealth;
-    //public int BaseStucktime;
+
     private float stuckTime;
+    private bool Reorient = false;
+    public int orientTime;
     
 
     
@@ -30,6 +31,7 @@ public class zombiescript : MonoBehaviour
         currentHealth = manager.baseHealth;
         pointsIndex = Random.Range(0, manager.Points.Length);
         stuckTime = manager.BaseStuckTime;
+        orientTime = manager.BaseStuckTime;
 
         //manager.layerCast = "Level";
     }
@@ -37,7 +39,7 @@ public class zombiescript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(this.transform.position, manager.plTransform.position) < manager.sight)
+        if (Vector2.Distance(this.transform.position, manager.plTransform.position) < manager.sight && Reorient == false)
         {
             moveTo(manager.plTransform);
             
@@ -56,6 +58,15 @@ public class zombiescript : MonoBehaviour
                 pointsIndex = 0;
             }
             
+        }
+        if (Reorient == true) 
+        { 
+            orientTime--;
+            if (orientTime <= 0)
+            {
+                Reorient = false;
+                orientTime = manager.BaseStuckTime;
+            }
         }
         
     }
@@ -78,9 +89,11 @@ public class zombiescript : MonoBehaviour
         if (stuckTime <= 0) 
         { 
             pointsIndex = Random.Range(0, manager.Points.Length);
+            Reorient = true;
             stuckTime = manager.BaseStuckTime * 0.5f;
         }
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         stuckTime = manager.BaseStuckTime;

@@ -308,6 +308,7 @@ MonoBehaviour:
   - {fileID: 1909638348}
   moveSpeed: 3
   sight: 8
+  Basesight: 8
   plTransform: {fileID: 1416113380}
   layerCast:
     serializedVersion: 2
